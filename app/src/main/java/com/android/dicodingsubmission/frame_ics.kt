@@ -21,6 +21,12 @@ class frame_ics : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.frame_ics_layout)
 
+        // my_child_toolbar is defined in the layout file
+        setSupportActionBar(findViewById(R.id.frame_ics_layout_toolbar))
+
+        // Get a support ActionBar corresponding to this toolbar and enable the Up button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         // Passing data from last activity
         val and_ver = intent.extras!!.getString("and_ver")
         val and_name = intent.extras!!.getString("and_name")

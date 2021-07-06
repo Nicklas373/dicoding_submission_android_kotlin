@@ -9,5 +9,10 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
+        // my_child_toolbar is defined in the layout file
+        setSupportActionBar(findViewById(R.id.activity_about_toolbar))
+
+        // Get a support ActionBar corresponding to this toolbar and enable the Up button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

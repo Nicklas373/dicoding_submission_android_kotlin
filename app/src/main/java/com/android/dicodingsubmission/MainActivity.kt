@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // my_child_toolbar is defined in the layout file
+        setSupportActionBar(findViewById(R.id.activity_main_toolbar))
+
         rvAndroid = findViewById(R.id.rv_android)
         rvAndroid.setHasFixedSize(true)
 
