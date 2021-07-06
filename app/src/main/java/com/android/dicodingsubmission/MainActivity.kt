@@ -49,6 +49,10 @@ class MainActivity : AppCompatActivity() {
                 showRecyclerGrid()
             }
 
+            R.id.action_card -> {
+                showRecyclerCardView()
+            }
+
             R.id.action_about -> {
                 val moveIntent = Intent(this@MainActivity, AboutActivity::class.java)
                 startActivity(moveIntent)
@@ -66,5 +70,11 @@ class MainActivity : AppCompatActivity() {
         rvAndroid.layoutManager = GridLayoutManager(this, 2)
         val gridAndroidAdapter = GridAndroidAdapter(list)
         rvAndroid.adapter = gridAndroidAdapter
+    }
+
+    private fun showRecyclerCardView() {
+        rvAndroid.layoutManager = LinearLayoutManager(this)
+        val cardViewHeroAdapter = CardViewAndroidAdapter(list)
+        rvAndroid.adapter = cardViewHeroAdapter
     }
 }

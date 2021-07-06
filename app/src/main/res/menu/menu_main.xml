@@ -10,6 +10,10 @@
         android:title="@string/app_menu_2"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/action_card"
+        android:title="@string/app_menu_4"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_about"
         android:title="@string/app_menu_3"
         app:showAsAction="never"/>

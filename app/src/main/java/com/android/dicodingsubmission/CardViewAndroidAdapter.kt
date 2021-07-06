@@ -4,26 +4,29 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class GridAndroidAdapter(val listAndroid: ArrayList<android>) : RecyclerView.Adapter<GridAndroidAdapter.GridViewHolder>() {
-
-    class GridViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var andLogo: ImageView = itemView.findViewById(R.id.and_grid_logo)
-        var andName: TextView = itemView.findViewById(R.id.and_grid_name)
-        var andDetail: TextView = itemView.findViewById(R.id.and_grid_detail)
+class CardViewAndroidAdapter(private val listAndroid: ArrayList<android>) : RecyclerView.Adapter<CardViewAndroidAdapter.CardViewViewHolder>() {
+    class CardViewViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var andLogo: ImageView = itemView.findViewById(R.id.and_cv_logo)
+        var andName: TextView = itemView.findViewById(R.id.and_cv_name)
+        var andDetail: TextView = itemView.findViewById(R.id.and_cv_detail)
+        var andFav: Button = itemView.findViewById(R.id.btn_set_favorite)
+        var andShare: Button = itemView.findViewById(R.id.btn_set_share)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridAndroidAdapter.GridViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_grid_android, parent, false)
-        return GridViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewViewHolder {
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_cardview_android, parent, false)
+        return CardViewViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: GridAndroidAdapter.GridViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
         val and = listAndroid[position]
         Glide.with(holder.itemView.context)
             .load(and.image)
@@ -31,7 +34,14 @@ class GridAndroidAdapter(val listAndroid: ArrayList<android>) : RecyclerView.Ada
             .into(holder.andLogo)
         holder.andName.text = and.android_version
         holder.andDetail.text = and.detail
+        holder.andFav.setOnClickListener { Toast.makeText(holder.itemView.context, "Favorite " + listAndroid[holder.adapterPosition].android_version, Toast.LENGTH_SHORT).show() }
+        holder.andShare.setOnClickListener { Toast.makeText(holder.itemView.context, "Share " + listAndroid[holder.adapterPosition].android_version, Toast.LENGTH_SHORT).show() }
         holder.itemView.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Kamu memilih " + listAndroid[holder.adapterPosition].android_version,
+                Toast.LENGTH_SHORT
+            ).show()
             if (position == 0) {
                 val context = holder.andLogo.context
                 val intent = Intent(context, frame_ics::class.java)
@@ -109,5 +119,4 @@ class GridAndroidAdapter(val listAndroid: ArrayList<android>) : RecyclerView.Ada
     override fun getItemCount(): Int {
         return listAndroid.size
     }
-
 }

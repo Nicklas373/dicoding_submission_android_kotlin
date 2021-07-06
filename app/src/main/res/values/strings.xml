@@ -3,6 +3,9 @@
     <string name="app_menu_1">List View</string>
     <string name="app_menu_2">Grid View</string>
     <string name="app_menu_3">About</string>
+    <string name="app_menu_4">Card View</string>
+    <string name="app_extras_1">Favorite</string>
+    <string name="app_extras_2">Share</string>
     <string name="app_author_name">Dicky Herlambang</string>
     <string name="app_author_email">herlambangdicky5@gmail.com</string>
     <string name="app_author_contact">Other Contact</string>
