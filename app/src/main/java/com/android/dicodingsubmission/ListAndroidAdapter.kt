@@ -1,6 +1,5 @@
 package com.android.dicodingsubmission
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -34,77 +33,88 @@ class ListAndroidAdapter(private val listAndroid: ArrayList<android>) : Recycler
         holder.andName.text = and.android_version
         holder.andDetail.text = and.detail
         holder.itemView.setOnClickListener{
-           if (position == 0 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "ics")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 1 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "jb")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 2 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "kk")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 3 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "lp")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 4 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "mm")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 5 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "nougat")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 6 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "oreo")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 7 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "pie")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 8 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "ten")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           } else if (position == 9 ) {
-               val context=holder.andLogo.context
-               val intent = Intent( context, frame_ics::class.java)
-               intent.putExtra("and_ver", "eleven")
-               intent.putExtra("and_name", holder.andName.text.toString())
-               intent.putExtra("and_detail", holder.andDetail.text.toString())
-               context.startActivity(intent)
-           }
+            when (position) {
+                0 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "ics")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                1 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "jb")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                2 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "kk")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                3 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "lp")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                4 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "mm")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                5 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "nougat")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                6 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "oreo")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                7 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "pie")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                8 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "ten")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+                9 -> {
+                    val context=holder.andLogo.context
+                    val intent = Intent( context, frame_ics::class.java)
+                    intent.putExtra("and_ver", "eleven")
+                    intent.putExtra("and_name", holder.andName.text.toString())
+                    intent.putExtra("and_detail", holder.andDetail.text.toString())
+                    context.startActivity(intent)
+                }
+            }
         }
     }
 
